@@ -1000,69 +1000,195 @@ footer{text-align:center;padding:28px 20px;border-top:1px solid var(--border);ma
 <div id="luminium" class="top-page">
 <div class="page-inner">
   <div class="section-title">LUMINIUM BUILDING UPGRADES</div>
-  <div class="section-sub">// PHASE-BY-PHASE ROADMAP TO LUMINIUM 1 //</div>
+  <div class="section-sub">// PHASE-BY-PHASE ROADMAP · LUMINIUM 1 → 5 //</div>
   <div class="callout gold"><strong>What is Luminium?</strong> Luminium is a late-game upgrade system for key buildings. Each upgrade increases stats and unlocks new buffs. Upgrading a building 4 times does <em>nothing</em> — only completing all <strong>5 upgrades</strong> triggers the Luminium level effect.</div>
   <div class="callout fire"><strong>⚠️ Golden Rule:</strong> Finish one building fully (all 5 upgrades) before moving to the next. Partial upgrades give zero benefit.</div>
 
-  <div class="divider"></div>
-  <h3 class="sub-header">🔩 PHASE 1 — HEADQUARTERS <span style="font-size:13px;color:var(--gold)">(MUST BE FIRST)</span></h3>
-  <div class="callout"><strong>Why first?</strong> HQ upgrades unlock all further Luminium progression. Complete this before anything else.</div>
-  <table class="lum-table">
-    <thead><tr><th>PHASE</th><th>BUILDING</th><th>UPGRADE #</th><th>LUMINIUM</th><th>TIME</th><th>NOTES</th></tr></thead>
-    <tbody>
-      <tr><td style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pale-gold)">1</td><td>Headquarters</td><td class="resource-cell">#1</td><td class="resource-cell">132</td><td class="resource-cell">4d 6h</td><td style="font-size:12px;color:var(--dim)">Unlocks progression</td></tr>
-      <tr><td style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pale-gold)">1</td><td>Headquarters</td><td class="resource-cell">#2</td><td class="resource-cell">132</td><td class="resource-cell">4d 6h</td><td style="font-size:12px;color:var(--dim)">—</td></tr>
-      <tr><td style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pale-gold)">1</td><td>Headquarters</td><td class="resource-cell">#3</td><td class="resource-cell">132</td><td class="resource-cell">4d 6h</td><td style="font-size:12px;color:var(--dim)">—</td></tr>
-      <tr><td style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pale-gold)">1</td><td>Headquarters</td><td class="resource-cell">#4</td><td class="resource-cell">132</td><td class="resource-cell">4d 6h</td><td style="font-size:12px;color:var(--dim)">—</td></tr>
-      <tr style="background:rgba(243,156,18,.08)"><td style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--gold)">1</td><td><strong style="color:#fff">Headquarters</strong></td><td class="resource-cell"><strong style="color:var(--gold)">#5 ✓</strong></td><td class="resource-cell"><strong style="color:var(--gold)">132</strong></td><td class="resource-cell">4d 6h</td><td style="font-size:12px;color:var(--gold)"><strong>= 660 Total · MUST BE FIRST</strong></td></tr>
-    </tbody>
-  </table>
+  <!-- LUMINIUM LEVEL SELECTOR -->
+  <div style="margin:20px 0;">
+    <div style="font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--dim);margin-bottom:10px;">SELECT LUMINIUM LEVEL</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <button onclick="showLumLevel(1,this)" id="lum-btn-1" style="font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;padding:8px 20px;border-radius:6px;border:2px solid var(--gold);background:rgba(243,156,18,.2);color:var(--gold);cursor:pointer;">L1</button>
+      <button onclick="showLumLevel(2,this)" id="lum-btn-2" style="font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;padding:8px 20px;border-radius:6px;border:2px solid var(--border);background:transparent;color:var(--dim);cursor:pointer;">L2</button>
+      <button onclick="showLumLevel(3,this)" id="lum-btn-3" style="font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;padding:8px 20px;border-radius:6px;border:2px solid var(--border);background:transparent;color:var(--dim);cursor:pointer;">L3</button>
+      <button onclick="showLumLevel(4,this)" id="lum-btn-4" style="font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;padding:8px 20px;border-radius:6px;border:2px solid var(--border);background:transparent;color:var(--dim);cursor:pointer;">L4</button>
+      <button onclick="showLumLevel(5,this)" id="lum-btn-5" style="font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;padding:8px 20px;border-radius:6px;border:2px solid var(--border);background:transparent;color:var(--dim);cursor:pointer;">L5</button>
+    </div>
+  </div>
 
-  <div class="divider"></div>
-  <h3 class="sub-header">🔩 PHASE 2 — ARMY BUILDINGS <span style="font-size:13px;color:#5dade2">(TIER +1 UNLOCK)</span></h3>
-  <div class="callout blue"><strong>Finish each building completely before starting the next.</strong> All three unlock Tier +1 troops. Order: Garage → Barracks → Shooting Range.</div>
-  <table class="lum-table">
-    <thead><tr><th>PHASE</th><th>BUILDING</th><th>UPGRADE #</th><th>LUMINIUM</th><th>TIME</th><th>NOTES</th></tr></thead>
-    <tbody>
-      <tr><td style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pale-gold)">2</td><td>Garage</td><td class="resource-cell">#1–#4</td><td class="resource-cell">59 each</td><td class="resource-cell">1d each</td><td style="font-size:12px;color:var(--dim)">Tier +1</td></tr>
-      <tr style="background:rgba(52,152,219,.06)"><td style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#5dade2">2</td><td><strong style="color:#fff">Garage</strong></td><td class="resource-cell"><strong style="color:#5dade2">#5 ✓</strong></td><td class="resource-cell"><strong style="color:#5dade2">59</strong></td><td class="resource-cell">1d</td><td style="font-size:12px;color:#5dade2"><strong>= 295 Total · Finish before next</strong></td></tr>
-      <tr><td style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pale-gold)">2</td><td>Barracks</td><td class="resource-cell">#1–#4</td><td class="resource-cell">59 each</td><td class="resource-cell">1d each</td><td style="font-size:12px;color:var(--dim)">Tier +1</td></tr>
-      <tr style="background:rgba(52,152,219,.06)"><td style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#5dade2">2</td><td><strong style="color:#fff">Barracks</strong></td><td class="resource-cell"><strong style="color:#5dade2">#5 ✓</strong></td><td class="resource-cell"><strong style="color:#5dade2">59</strong></td><td class="resource-cell">1d</td><td style="font-size:12px;color:#5dade2"><strong>= 295 Total · Finish before next</strong></td></tr>
-      <tr><td style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pale-gold)">2</td><td>Shooting Range</td><td class="resource-cell">#1–#4</td><td class="resource-cell">59 each</td><td class="resource-cell">1d each</td><td style="font-size:12px;color:var(--dim)">Tier +1</td></tr>
-      <tr style="background:rgba(52,152,219,.06)"><td style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#5dade2">2</td><td><strong style="color:#fff">Shooting Range</strong></td><td class="resource-cell"><strong style="color:#5dade2">#5 ✓</strong></td><td class="resource-cell"><strong style="color:#5dade2">59</strong></td><td class="resource-cell">1d</td><td style="font-size:12px;color:#5dade2"><strong>= 295 Total · Finish before next</strong></td></tr>
-    </tbody>
-  </table>
+  <!-- ══ LUMINIUM 1 ══ -->
+  <div id="lum-section-1" class="lum-section">
+    <div class="divider"></div>
+    <div style="background:rgba(243,156,18,.08);border:1px solid rgba(243,156,18,.3);border-radius:8px;padding:12px 16px;margin-bottom:16px;display:flex;align-items:center;gap:14px;">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--gold);letter-spacing:4px;line-height:1;">L1</div>
+      <div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--dim);">LUMINIUM LEVEL 1</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:2px;">TOTAL: 1,770 LUM</div>
+        <div style="font-size:12px;color:var(--dim);margin-top:2px;">3 Troop Buildings (Mansion + Training + Alliance): <strong style="color:var(--gold)">885</strong></div>
+      </div>
+    </div>
 
-  <div class="divider"></div>
-  <h3 class="sub-header">🔩 PHASE 3 — COMMAND CENTER <span style="font-size:13px;color:#2ecc71">(RALLY &amp; LEADERSHIP)</span></h3>
-  <div class="callout"><strong>After all army buildings.</strong> Command Center boosts rally capacity and leadership stats.</div>
-  <table class="lum-table">
-    <thead><tr><th>PHASE</th><th>BUILDING</th><th>UPGRADE #</th><th>LUMINIUM</th><th>TIME</th><th>NOTES</th></tr></thead>
-    <tbody>
-      <tr><td style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pale-gold)">3</td><td>Command Center</td><td class="resource-cell">#1–#4</td><td class="resource-cell">26 each</td><td class="resource-cell">—</td><td style="font-size:12px;color:var(--dim)">Rally &amp; leadership</td></tr>
-      <tr style="background:rgba(46,204,113,.06)"><td style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#2ecc71">3</td><td><strong style="color:#fff">Command Center</strong></td><td class="resource-cell"><strong style="color:#2ecc71">#5 ✓</strong></td><td class="resource-cell"><strong style="color:#2ecc71">26</strong></td><td class="resource-cell">—</td><td style="font-size:12px;color:#2ecc71"><strong>= 130 Total · After Army Camps</strong></td></tr>
-    </tbody>
-  </table>
+    <h3 class="sub-header">🏠 MANSION</h3>
+    <table class="lum-table">
+      <thead><tr><th>BUILDING</th><th>LUM PER UPGRADE (×5)</th><th>TOTAL LUM</th></tr></thead>
+      <tbody>
+        <tr><td>Mansion</td><td class="resource-cell">59</td><td class="resource-cell"><strong style="color:var(--gold)">295</strong></td></tr>
+        <tr><td>Training Building</td><td class="resource-cell">59</td><td class="resource-cell"><strong style="color:var(--gold)">295</strong></td></tr>
+        <tr><td>Alliance Center</td><td class="resource-cell">33</td><td class="resource-cell">165</td></tr>
+        <tr><td>Helipad</td><td class="resource-cell">33</td><td class="resource-cell">165</td></tr>
+        <tr><td>Command Center</td><td class="resource-cell">26</td><td class="resource-cell">130</td></tr>
+        <tr><td>Hospital</td><td class="resource-cell">26</td><td class="resource-cell">130</td></tr>
+        <tr style="background:rgba(243,156,18,.08)"><td><strong style="color:#fff">TOTAL</strong></td><td></td><td class="resource-cell"><strong style="color:var(--gold);font-size:15px;">1,770</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="callout gold"><strong>Troop Buildings Total (Mansion + Training Building + Alliance Center):</strong> <strong style="font-size:16px;">885</strong> — Add the bolded numbers together.</div>
+  </div>
 
+  <!-- ══ LUMINIUM 2 ══ -->
+  <div id="lum-section-2" class="lum-section" style="display:none;">
+    <div class="divider"></div>
+    <div style="background:rgba(243,156,18,.08);border:1px solid rgba(243,156,18,.3);border-radius:8px;padding:12px 16px;margin-bottom:16px;display:flex;align-items:center;gap:14px;">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--gold);letter-spacing:4px;line-height:1;">L2</div>
+      <div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--dim);">LUMINIUM LEVEL 2</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:2px;">TOTAL: 2,555 LUM</div>
+        <div style="font-size:12px;color:var(--dim);margin-top:2px;">3 Troop Buildings (Mansion + Training + Alliance): <strong style="color:var(--gold)">1,065</strong></div>
+      </div>
+    </div>
+
+    <table class="lum-table">
+      <thead><tr><th>BUILDING</th><th>LUM PER UPGRADE (×5)</th><th>TOTAL LUM</th></tr></thead>
+      <tbody>
+        <tr><td>Mansion</td><td class="resource-cell">158</td><td class="resource-cell"><strong style="color:var(--gold)">790</strong></td></tr>
+        <tr><td>Training Building</td><td class="resource-cell">71</td><td class="resource-cell"><strong style="color:var(--gold)">355</strong></td></tr>
+        <tr><td>Alliance Center</td><td class="resource-cell">39</td><td class="resource-cell">195</td></tr>
+        <tr><td>Helipad</td><td class="resource-cell">39</td><td class="resource-cell">195</td></tr>
+        <tr><td>Command Center</td><td class="resource-cell">31</td><td class="resource-cell">155</td></tr>
+        <tr><td>Hospital</td><td class="resource-cell">31</td><td class="resource-cell">155</td></tr>
+        <tr style="background:rgba(243,156,18,.08)"><td><strong style="color:#fff">TOTAL</strong></td><td></td><td class="resource-cell"><strong style="color:var(--gold);font-size:15px;">2,555</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="callout gold"><strong>Troop Buildings Total (Mansion + Training Building + Alliance Center):</strong> <strong style="font-size:16px;">1,065</strong> — Add the bolded numbers together.</div>
+  </div>
+
+  <!-- ══ LUMINIUM 3 ══ -->
+  <div id="lum-section-3" class="lum-section" style="display:none;">
+    <div class="divider"></div>
+    <div style="background:rgba(243,156,18,.08);border:1px solid rgba(243,156,18,.3);border-radius:8px;padding:12px 16px;margin-bottom:16px;display:flex;align-items:center;gap:14px;">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--gold);letter-spacing:4px;line-height:1;">L3</div>
+      <div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--dim);">LUMINIUM LEVEL 3</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:2px;">TOTAL: 3,855 LUM</div>
+        <div style="font-size:12px;color:var(--dim);margin-top:2px;">3 Troop Buildings (Mansion + Training + Alliance): <strong style="color:var(--gold)">1,605</strong></div>
+      </div>
+    </div>
+
+    <table class="lum-table">
+      <thead><tr><th>BUILDING</th><th>LUM PER UPGRADE (×5)</th><th>TOTAL LUM</th></tr></thead>
+      <tbody>
+        <tr><td>Mansion</td><td class="resource-cell">238</td><td class="resource-cell"><strong style="color:var(--gold)">1,190</strong></td></tr>
+        <tr><td>Training Building</td><td class="resource-cell">107</td><td class="resource-cell"><strong style="color:var(--gold)">535</strong></td></tr>
+        <tr><td>Alliance Center</td><td class="resource-cell">59</td><td class="resource-cell">295</td></tr>
+        <tr><td>Helipad</td><td class="resource-cell">59</td><td class="resource-cell">295</td></tr>
+        <tr><td>Command Center</td><td class="resource-cell">47</td><td class="resource-cell">235</td></tr>
+        <tr><td>Hospital</td><td class="resource-cell">47</td><td class="resource-cell">235</td></tr>
+        <tr style="background:rgba(243,156,18,.08)"><td><strong style="color:#fff">TOTAL</strong></td><td></td><td class="resource-cell"><strong style="color:var(--gold);font-size:15px;">3,855</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="callout gold"><strong>Troop Buildings Total (Mansion + Training Building + Alliance Center):</strong> <strong style="font-size:16px;">1,605</strong> — Add the bolded numbers together.</div>
+  </div>
+
+  <!-- ══ LUMINIUM 4 ══ -->
+  <div id="lum-section-4" class="lum-section" style="display:none;">
+    <div class="divider"></div>
+    <div style="background:rgba(243,156,18,.08);border:1px solid rgba(243,156,18,.3);border-radius:8px;padding:12px 16px;margin-bottom:16px;display:flex;align-items:center;gap:14px;">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--gold);letter-spacing:4px;line-height:1;">L4</div>
+      <div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--dim);">LUMINIUM LEVEL 4</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:2px;">TOTAL: 4,550 LUM</div>
+        <div style="font-size:12px;color:var(--dim);margin-top:2px;">3 Troop Buildings (Mansion + Training + Alliance): <strong style="color:var(--gold)">1,890</strong></div>
+      </div>
+    </div>
+
+    <table class="lum-table">
+      <thead><tr><th>BUILDING</th><th>LUM PER UPGRADE (×5)</th><th>TOTAL LUM</th></tr></thead>
+      <tbody>
+        <tr><td>Mansion</td><td class="resource-cell">280</td><td class="resource-cell"><strong style="color:var(--gold)">1,400</strong></td></tr>
+        <tr><td>Training Building</td><td class="resource-cell">126</td><td class="resource-cell"><strong style="color:var(--gold)">630</strong></td></tr>
+        <tr><td>Alliance Center</td><td class="resource-cell">70</td><td class="resource-cell">350</td></tr>
+        <tr><td>Helipad</td><td class="resource-cell">70</td><td class="resource-cell">350</td></tr>
+        <tr><td>Command Center</td><td class="resource-cell">56</td><td class="resource-cell">280</td></tr>
+        <tr><td>Hospital</td><td class="resource-cell">56</td><td class="resource-cell">280</td></tr>
+        <tr style="background:rgba(243,156,18,.08)"><td><strong style="color:#fff">TOTAL</strong></td><td></td><td class="resource-cell"><strong style="color:var(--gold);font-size:15px;">4,550</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="callout gold"><strong>Troop Buildings Total (Mansion + Training Building + Alliance Center):</strong> <strong style="font-size:16px;">1,890</strong> — Add the bolded numbers together.</div>
+  </div>
+
+  <!-- ══ LUMINIUM 5 ══ -->
+  <div id="lum-section-5" class="lum-section" style="display:none;">
+    <div class="divider"></div>
+    <div style="background:rgba(243,156,18,.08);border:1px solid rgba(243,156,18,.3);border-radius:8px;padding:12px 16px;margin-bottom:16px;display:flex;align-items:center;gap:14px;">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--gold);letter-spacing:4px;line-height:1;">L5</div>
+      <div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--dim);">LUMINIUM LEVEL 5</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:2px;">TOTAL: 5,494 LUM</div>
+        <div style="font-size:12px;color:var(--dim);margin-top:2px;">3 Troop Buildings (Mansion + Training + Alliance): <strong style="color:var(--gold)">2,250</strong></div>
+      </div>
+    </div>
+
+    <table class="lum-table">
+      <thead><tr><th>BUILDING</th><th>LUM PER UPGRADE (×5)</th><th>TOTAL LUM</th></tr></thead>
+      <tbody>
+        <tr><td>Mansion</td><td class="resource-cell">350</td><td class="resource-cell"><strong style="color:var(--gold)">1,750</strong></td></tr>
+        <tr><td>Training Building</td><td class="resource-cell">150</td><td class="resource-cell"><strong style="color:var(--gold)">750</strong></td></tr>
+        <tr><td>Alliance Center</td><td class="resource-cell">83</td><td class="resource-cell">415</td></tr>
+        <tr><td>Helipad</td><td class="resource-cell">83</td><td class="resource-cell">415</td></tr>
+        <tr><td>Command Center</td><td class="resource-cell">66</td><td class="resource-cell">332</td></tr>
+        <tr><td>Hospital</td><td class="resource-cell">66</td><td class="resource-cell">332</td></tr>
+        <tr style="background:rgba(243,156,18,.08)"><td><strong style="color:#fff">TOTAL</strong></td><td></td><td class="resource-cell"><strong style="color:var(--gold);font-size:15px;">5,494</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="callout gold"><strong>Troop Buildings Total (Mansion + Training Building + Alliance Center):</strong> <strong style="font-size:16px;">2,250</strong> — Add the bolded numbers together.</div>
+  </div>
+
+  <!-- CUMULATIVE OVERVIEW -->
   <div class="divider"></div>
-  <div style="background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;margin:16px 0">
-    <div style="font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--dim);margin-bottom:8px">TOTAL LUMINIUM — ALL BUILDINGS — LUMINIUM 1</div>
-    <div style="font-family:'Bebas Neue',sans-serif;font-size:56px;color:var(--gold);letter-spacing:6px;line-height:1">1,675</div>
-    <div style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--dim);margin-top:6px">HQ 660 · Garage 295 · Barracks 295 · Shooting Range 295 · Command Center 130</div>
+  <h3 class="sub-header">📊 CUMULATIVE OVERVIEW (L3 + L4 + L5)</h3>
+  <div style="background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;margin:16px 0;">
+    <div style="font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--dim);margin-bottom:8px;">TOTAL LUMINIUM — L3 + L4 + L5 COMBINED</div>
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:56px;color:var(--gold);letter-spacing:6px;line-height:1;">13,899</div>
+    <div style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--dim);margin-top:6px;">L3: 3,855 · L4: 4,550 · L5: 5,494</div>
   </div>
 
   <div class="divider"></div>
-  <h3 class="sub-header">📋 PRIORITY ORDER</h3>
+  <h3 class="sub-header">📋 GENERAL PRIORITY ORDER</h3>
   <ul class="skill-list" style="background:var(--panel);padding:14px 18px;border-radius:8px;">
-    <li><span class="skill-num">1ST</span><div><strong style="color:var(--gold)">Headquarters — 660 Luminium</strong> · Must be first. Unlocks all progression. 4d 6h per upgrade × 5.</div></li>
-    <li><span class="skill-num">2ND</span><div><strong style="color:#5dade2">Garage — 295 Luminium</strong> · Unlocks Tier +1 troops. 1 day per upgrade × 5. Finish fully before Barracks.</div></li>
-    <li><span class="skill-num">3RD</span><div><strong style="color:#5dade2">Barracks — 295 Luminium</strong> · Unlocks Tier +1 troops. 1 day per upgrade × 5. Finish fully before Shooting Range.</div></li>
-    <li><span class="skill-num">4TH</span><div><strong style="color:#5dade2">Shooting Range — 295 Luminium</strong> · Unlocks Tier +1 troops. 1 day per upgrade × 5.</div></li>
-    <li><span class="skill-num">5TH</span><div><strong style="color:#2ecc71">Command Center — 130 Luminium</strong> · Rally &amp; leadership boosts. After all army buildings complete.</div></li>
+    <li><span class="skill-num">1ST</span><div><strong style="color:var(--gold)">Mansion</strong> · Highest Luminium cost per level — always the biggest investment. Prioritise first.</div></li>
+    <li><span class="skill-num">2ND</span><div><strong style="color:#5dade2">Training Building</strong> · Second-highest cost. Unlocks troop tier boosts. Finish fully before next.</div></li>
+    <li><span class="skill-num">3RD</span><div><strong style="color:#5dade2">Alliance Center</strong> · Third troop building. Completes the 3-building troop bonus group.</div></li>
+    <li><span class="skill-num">4TH</span><div><strong style="color:#5dade2">Helipad</strong> · Matches Alliance Center cost. Do after Alliance Center is maxed.</div></li>
+    <li><span class="skill-num">5TH</span><div><strong style="color:#2ecc71">Command Center &amp; Hospital</strong> · Cheapest buildings. Do last — equal cost at every level.</div></li>
   </ul>
 
   <div class="callout green"><strong>💡 How to Get Luminium Materials:</strong> Alliance Bond rewards · Server vs Server World Shop · Daily Radar Missions · Spending</div>
 </div>
+
+<script>
+function showLumLevel(level, btn) {
+  document.querySelectorAll('.lum-section').forEach(function(el){ el.style.display = 'none'; });
+  document.getElementById('lum-section-' + level).style.display = 'block';
+  for(var i=1;i<=5;i++){
+    var b = document.getElementById('lum-btn-'+i);
+    b.style.borderColor = 'var(--border)';
+    b.style.background = 'transparent';
+    b.style.color = 'var(--dim)';
+  }
+  btn.style.borderColor = 'var(--gold)';
+  btn.style.background = 'rgba(243,156,18,.2)';
+  btn.style.color = 'var(--gold)';
+}
+</script>
 </div><!-- end luminium top-page -->
 
 <!-- ═══════════════════════════════════ -->
